@@ -84,5 +84,5 @@ case class SimpleRNG(seed: Long)  extends RNG {
   def sequence[A](fs: List[Rand[A]]): Rand[List[A]] =
     fs.foldRight(unit(Nil:List[A]))((ra, rl) => map2(ra, rl)((a, l) => a::l))
 
-  
+
 }
